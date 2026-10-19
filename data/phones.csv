@@ -1,0 +1,21 @@
+id,model,storage_gb,color,grade,battery_health,lock_status,imei_status,imei_checked_on,price,condition_notes,warranty_days,listed_on,status
+P1001,iPhone 13,128,Midnight,A,91,Unlocked,Clean,2026-10-02,389.00,"Like new. No marks on screen or body.",90,2026-10-03,available
+P1002,iPhone 13,128,Blue,B,86,Unlocked,Clean,2026-10-04,339.00,"Light scratches on back, screen perfect, all buttons tested.",90,2026-10-05,available
+P1003,iPhone 13,256,Pink,A,94,Unlocked,Clean,2026-10-06,419.00,"Like new. Small mark on the SIM tray only.",90,2026-10-07,available
+P1004,iPhone 13 mini,128,Red,C,84,Unlocked,Clean,2026-09-28,299.00,"Visible scratches on screen edges and dent on bottom corner. Works fully.",90,2026-09-29,available
+P1005,iPhone 13 Pro,256,Graphite,B,88,Unlocked,Clean,2026-10-08,529.00,"Light wear on frame. Screen and cameras perfect.",90,2026-10-09,available
+P1006,iPhone 13,128,Starlight,B,85,AT&T Locked,Clean,2026-10-01,309.00,"Light scratches on back. Locked to AT&T.",90,2026-10-02,available
+P1007,iPhone 13,128,Midnight,A,92,Unlocked,Clean,2026-09-20,379.00,"Like new.",90,2026-09-21,sold
+P1008,iPhone 14,128,Purple,A,95,Unlocked,Clean,2026-10-10,489.00,"Like new. No marks.",90,2026-10-11,available
+P1009,iPhone 14,256,Midnight,B,89,Unlocked,Clean,2026-10-09,509.00,"Light scratches on screen, hard to see when on.",90,2026-10-10,available
+P1010,iPhone 14 Pro,128,Space Black,A,93,Unlocked,Clean,2026-10-12,639.00,"Like new. Original box not included.",90,2026-10-13,available
+P1011,iPhone 14 Plus,256,Blue,C,82,Verizon Locked,Clean,2026-10-05,429.00,"Scuffs on all corners and a small crack in back glass. Screen perfect.",90,2026-10-06,available
+P1012,iPhone 12,64,Black,B,83,Unlocked,Clean,2026-09-30,239.00,"Light scratches on back and frame.",90,2026-10-01,available
+P1013,iPhone 12,128,White,A,88,Unlocked,Clean,2026-10-07,279.00,"Like new.",90,2026-10-08,available
+P1014,iPhone 12 Pro,128,Pacific Blue,B,85,Unlocked,Clean,2026-10-03,329.00,"Light wear on stainless frame. Screen perfect.",90,2026-10-04,available
+P1015,iPhone 12 mini,64,Green,C,80,Unlocked,Clean,2026-09-25,189.00,"Deep scratch on back glass and small dent on side. Fully tested.",90,2026-09-26,available
+P1016,iPhone 11,64,Purple,B,84,Unlocked,Clean,2026-09-27,199.00,"Light scratches on screen and back.",90,2026-09-28,available
+P1017,iPhone 11,128,Black,A,89,T-Mobile Locked,Clean,2026-10-06,219.00,"Like new. Locked to T-Mobile.",90,2026-10-07,available
+P1018,iPhone 15,128,Pink,A,98,Unlocked,Clean,2026-10-14,629.00,"Like new. Battery at 98 percent.",90,2026-10-15,available
+P1019,iPhone 15 Pro,256,Natural Titanium,B,92,Unlocked,Clean,2026-10-15,779.00,"Light wear on titanium frame. Screen perfect.",90,2026-10-16,available
+P1020,iPhone SE (3rd gen),64,Midnight,B,87,Unlocked,Clean,2026-10-11,149.00,"Light scratches on the home button area.",90,2026-10-12,available

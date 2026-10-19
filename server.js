@@ -7,13 +7,27 @@ const path = require('path');
 const crypto = require('crypto');
 
 const PORT = process.env.PORT || 3000;
-const DATA = path.join(__dirname, 'data');
+
+// Looks for a file in the given subfolder first, then next to server.js.
+// This way the app still works if the folders get flattened when uploading to GitHub.
+function findFile(folder, file) {
+  const inFolder = path.join(__dirname, folder, file);
+  const nextToServer = path.join(__dirname, file);
+  if (fs.existsSync(inFolder) || !fs.existsSync(nextToServer)) return inFolder;
+  return nextToServer;
+}
 
 // ---------- CSV helpers ----------
 
 // Reads a CSV file into a list of objects. Handles quoted values with commas.
 function readCsv(file) {
-  const text = fs.readFileSync(path.join(DATA, file), 'utf8').replace(/\r/g, '');
+  const full = findFile('data', file);
+  if (!fs.existsSync(full)) {
+    if (file === 'cart_items.csv') return []; // created on the first add to cart
+    console.error(`Missing data file: ${file}. Upload the data folder (with ${file} inside) next to server.js.`);
+    process.exit(1);
+  }
+  const text = fs.readFileSync(full, 'utf8').replace(/\r/g, '');
   const rows = [];
   let row = [], value = '', inQuotes = false;
   for (let i = 0; i < text.length; i++) {
@@ -39,7 +53,9 @@ function readCsv(file) {
 function writeCsv(file, headers, items) {
   const esc = v => /[",\n]/.test(String(v)) ? '"' + String(v).replace(/"/g, '""') + '"' : String(v);
   const lines = [headers.join(',')].concat(items.map(it => headers.map(h => esc(it[h])).join(',')));
-  fs.writeFileSync(path.join(DATA, file), lines.join('\n') + '\n');
+  const full = findFile('data', file);
+  fs.mkdirSync(path.dirname(full), { recursive: true });
+  fs.writeFileSync(full, lines.join('\n') + '\n');
 }
 
 // ---------- Load business data ----------
@@ -421,7 +437,7 @@ const server = http.createServer(async (req, res) => {
   try {
     if (req.method === 'GET' && url.pathname === '/style.css') {
       res.writeHead(200, { 'Content-Type': 'text/css' });
-      return res.end(fs.readFileSync(path.join(__dirname, 'public', 'style.css')));
+      return res.end(fs.readFileSync(findFile('public', 'style.css')));
     }
 
     const count = () => cartFor(cartId).count;

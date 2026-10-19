@@ -1,0 +1,5 @@
+key,value
+shipping_fee,6.99
+free_shipping_over,200
+tax_rate,0.095
+reserve_minutes,15
